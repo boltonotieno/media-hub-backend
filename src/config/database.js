@@ -1,11 +1,10 @@
-import env from './environment';
+const env = require('./environment');
 
 const defaultConfig = {
-  username: env.DATABASE_USERNAME,
-  database: env.DATABASE_NAME,
-  password: env.DATABASE_PASSWORD,
-  host: env.DATABASE_HOST,
-  dialect: env.DATABASE_DIALECT,
+  databaseUrl: env.DATABASE_URL,
+  dialect: env.DATABASE_DIALECT || 'postgres',
+  use_env_variable: 'DATABASE_URL',
+  logging: true,
 };
 
 const database = {
@@ -20,4 +19,4 @@ const database = {
   }
 };
 
-export default database;
+module.exports = database;

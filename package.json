@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-skeleton-app",
+  "name": "media-hub-backend",
   "version": "1.0.0",
   "description": "NodeJs Starter",
   "main": "src/index.js",
@@ -10,18 +10,23 @@
     "serve": "node dist/index.js",
     "build": "npm run clean && npm run build-server",
     "start": "NODE_ENV=production npm run build",
-    "start:dev": "NODE_ENV=development  DEBUG=log nodemon --exec babel-node src/index.js"
+    "start:dev": "NODE_ENV=development  DEBUG=log nodemon --exec babel-node src/index.js",
+    "db:seed": "node_modules/.bin/sequelize db:seed:all $* --seeders-path src/database/seeders",
+    "db:migrate": "node_modules/.bin/sequelize db:migrate",
+    "db:migrate:undo": "node_modules/.bin/sequelize db:migrate:undo",
+    "db:rollback": "node_modules/.bin/sequelize db:migrate:undo:all",
+    "db:rollmigrate": "yarn db:rollback && yarn db:migrate && yarn db:seed"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/BoltC0rt3z/NodeJS-Skeleton-App"
+    "url": "https://github.com/boltonotieno/media-hub-backend"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/BoltC0rt3z/NodeJS-Skeleton-App/issues"
+    "url": "https://github.com/boltonotieno/media-hub-backend/issues"
   },
-  "homepage": "https://github.com/BoltC0rt3z/NodeJS-Skeleton-App#readme",
+  "homepage": "https://github.com/boltonotieno/media-hub-backend#readme",
   "dependencies": {
     "app-root-path": "^3.0.0",
     "body-parser": "^1.19.0",
@@ -31,7 +36,8 @@
     "express": "^4.17.1",
     "http": "0.0.0",
     "morgan": "^1.9.1",
-    "sequelize": "^5.21.3"
+    "pg": "^8.11.3",
+    "sequelize": "^6.35.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -42,6 +48,7 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.1",
-    "nodemon": "^2.0.2"
+    "nodemon": "^3.0.1",
+    "sequelize-cli": "^6.6.2"
   }
 }

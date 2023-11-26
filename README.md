@@ -1,10 +1,10 @@
-# NodeJS Skeleton App
+# Media Hub Backend
 
-Node application skeleton
+Social Media Dashboard
 
 # Description
 
-**nodejs-skeleton-app** is a backend application skeleton to help you quick start nodejs application development.
+**media-hub-backend** Create a centralized dashboard that aggregates data from various social media platforms, providing users with insights into their social media performance.
 
 # Table of Contents
 
@@ -33,17 +33,17 @@ Follow these steps to set up the project in development mode
 - Install [Nodejs](https://nodejs.org/en/download/)
 - Clone the repository by running the command
   ```
-  git clone https://github.com/BoltC0rt3z/NodeJS-Skeleton-App.git
+  git clone https://github.com/boltonotieno/media-hub-backend.git
   ```
-- Run `cd NodeJS-Skeleton-App` to enter the application's directory
+- Run `cd media-hub-backend` to enter the application's directory
 - Install the application's dependencies by running the command
   ```
-  npm install
+  yarn install
   ```
 - Create a `.env` file in the root of your directory using the `.env.example` file in the repository
 - Start the application by running
   ```
-  npm run start:dev
+  yarn start:dev
   ```
   The application should now be running at `http://127.0.0.1:PORT`. (replace PORT with what you have in your .env)
 
@@ -53,20 +53,20 @@ Follow these steps to set up the project in development mode
   ```
     PORT=
     NODE_ENV=
-    DATABASE_HOST=
-    DATABASE_PASSWORD=
-    DATABASE_USERNAME=
-    DATABASE_NAME=
-    DATABASE_PORT=
+    DATABASE_UR=
     DATABASE_DIALECT=
+    JWT_SECRET_KEY=
   ```
 
 ### Database and ORM
 
-- Create a database in either `PostgreSQL` or `MySQL`
-- Place the appropriate configs in the `.env file`
-- You now go ahead and create the necessary models you have in `src/database/model` folder
+- Create a database in `PostgreSQL` and name it `media-hub`
+- Run database migrations
+  ```
+  yarn run db:migrate and yarn run db:seed
+  ```
+- Check the database and confirm that the `users` table has been created
 
 ## License
 
-This application is licensed under the terms of the [MIT License](https://github.com/BoltC0rt3z/NodeJS-Skeleton-App/LICENSE)
+This application is licensed under the terms of the [MIT License](https://github.com/boltonotieno/media-hub-backend/blob/develop/LICENCE)
