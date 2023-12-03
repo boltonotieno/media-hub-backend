@@ -12,6 +12,8 @@
   },
   "rules": {
     "max-len": ["warn", { "code": 100, "ignoreUrls": true }],
+    "implicit-arrow-linebreak":"off",
+    "quotes": ["warn", "double"],
     "consistent-return": 0,
     "comma-dangle": 0,
     "no-fallthrough": 0,

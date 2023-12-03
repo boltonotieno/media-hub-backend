@@ -1,5 +1,5 @@
-export default async (sequelize, DataTypes) => {
-  const Role = sequelize.define('Role', {
+export default (sequelize, DataTypes) => {
+  const Role = sequelize.define("Role", {
     id: {
       allowNull: false,
       primaryKey: true,
@@ -18,11 +18,10 @@ export default async (sequelize, DataTypes) => {
   });
   Role.associate = (models) => {
     Role.belongsToMany(models.User, {
-      foreignKey: 'roleId',
-      as: 'users',
+      foreignKey: "roleId",
+      as: "users",
       through: models.UserRole,
     });
   };
-  await Role.sync();
   return Role;
 };

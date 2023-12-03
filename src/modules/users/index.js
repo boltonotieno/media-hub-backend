@@ -1,15 +1,18 @@
-import { Router } from 'express';
-import UserController from './usersController';
-import middlewares from '../../middlewares';
+import { Router } from "express";
+import UserController from "./usersController";
+import middlewares from "../../middlewares";
 
 const { UsersMiddleware } = middlewares;
 
 const UserRouter = Router();
 
+UserRouter.post("/user", UserController.mainFunction);
+
 UserRouter.post(
-  '/user',
-  UsersMiddleware.validateUserData,
-  UserController.mainFunction,
+  "/login",
+  UsersMiddleware.validateLoginData,
+  UsersMiddleware.validateLoginCredentials,
+  UserController.userLogin
 );
 
 export default UserRouter;

@@ -29,12 +29,15 @@
   "homepage": "https://github.com/boltonotieno/media-hub-backend#readme",
   "dependencies": {
     "app-root-path": "^3.0.0",
+    "bcrypt": "^5.1.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "debug": "^4.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "http": "0.0.0",
+    "joi": "^17.11.0",
+    "jsonwebtoken": "^9.0.2",
     "morgan": "^1.9.1",
     "pg": "^8.11.3",
     "sequelize": "^6.35.1"

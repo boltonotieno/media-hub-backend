@@ -1,6 +1,6 @@
-export default async (sequelize, DataTypes) => {
+export default (sequelize, DataTypes) => {
   const UserRole = sequelize.define(
-    'UserRole',
+    "UserRole",
     {
       userId: {
         allowNull: false,
@@ -8,7 +8,7 @@ export default async (sequelize, DataTypes) => {
       },
       roleId: {
         allowNull: false,
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
       },
     },
     {
@@ -17,10 +17,9 @@ export default async (sequelize, DataTypes) => {
   );
   UserRole.associate = (models) => {
     UserRole.belongsTo(models.User, {
-      foreignKey: 'userId',
-      as: 'user',
+      foreignKey: "userId",
+      as: "user",
     });
   };
-  await UserRole.sync();
   return UserRole;
 };
